@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubik's Cube Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cube-container">
+        <div class="cube">
+            <div class="face front" data-face="F">
+                <div class="sticker" data-index="0"></div><div class="sticker" data-index="1"></div><div class="sticker" data-index="2"></div>
+                <div class="sticker" data-index="3"></div><div class="sticker" data-index="4"></div><div class="sticker" data-index="5"></div>
+                <div class="sticker" data-index="6"></div><div class="sticker" data-index="7"></div><div class="sticker" data-index="8"></div>
+            </div>
+            <div class="face back" data-face="B">
+                <div class="sticker" data-index="0"></div><div class="sticker" data-index="1"></div><div class="sticker" data-index="2"></div>
+                <div class="sticker" data-index="3"></div><div class="sticker" data-index="4"></div><div class="sticker" data-index="5"></div>
+                <div class="sticker" data-index="6"></div><div class="sticker" data-index="7"></div><div class="sticker" data-index="8"></div>
+            </div>
+            <div class="face right" data-face="R">
+                <div class="sticker" data-index="0"></div><div class="sticker" data-index="1"></div><div class="sticker" data-index="2"></div>
+                <div class="sticker" data-index="3"></div><div class="sticker" data-index="4"></div><div class="sticker" data-index="5"></div>
+                <div class="sticker" data-index="6"></div><div class="sticker" data-index="7"></div><div class="sticker" data-index="8"></div>
+            </div>
+            <div class="face left" data-face="L">
+                <div class="sticker" data-index="0"></div><div class="sticker" data-index="1"></div><div class="sticker" data-index="2"></div>
+                <div class="sticker" data-index="3"></div><div class="sticker" data-index="4"></div><div class="sticker" data-index="5"></div>
+                <div class="sticker" data-index="6"></div><div class="sticker" data-index="7"></div><div class="sticker" data-index="8"></div>
+            </div>
+            <div class="face top" data-face="U">
+                <div class="sticker" data-index="0"></div><div class="sticker" data-index="1"></div><div class="sticker" data-index="2"></div>
+                <div class="sticker" data-index="3"></div><div class="sticker" data-index="4"></div><div class="sticker" data-index="5"></div>
+                <div class="sticker" data-index="6"></div><div class="sticker" data-index="7"></div><div class="sticker" data-index="8"></div>
+            </div>
+            <div class="face bottom" data-face="D">
+                <div class="sticker" data-index="0"></div><div class="sticker" data-index="1"></div><div class="sticker" data-index="2"></div>
+                <div class="sticker" data-index="3"></div><div class="sticker" data-index="4"></div><div class="sticker" data-index="5"></div>
+                <div class="sticker" data-index="6"></div><div class="sticker" data-index="7"></div><div class="sticker" data-index="8"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <h3>Cube Controls</h3>
+        <div class="button-group">
+            <button onclick="makeMove('F')">F</button>
+            <button onclick="makeMove('F_PRIME')">F'</button>
+            <button onclick="makeMove('R')">R</button>
+            <button onclick="makeMove('R_PRIME')">R'</button>
+            <button onclick="makeMove('U')">U</button>
+            <button onclick="makeMove('U_PRIME')">U'</button>
+        </div>
+        <div class="button-group">
+            <button onclick="makeMove('L')">L</button>
+            <button onclick="makeMove('L_PRIME')">L'</button>
+            <button onclick="makeMove('D')">D</button>
+            <button onclick="makeMove('D_PRIME')">D'</button>
+            <button onclick="makeMove('B')">B</button>
+            <button onclick="makeMove('B_PRIME')">B'</button>
+        </div>
+        <button onclick="scrambleCube()">Scramble</button>
+        <button onclick="resetCube()">Reset</button>
+        <p>Aap mouse se poore cube ko rotate kar sakte hain.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

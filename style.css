@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #222;
+    overflow: hidden;
+    perspective: 800px; /* Thora kam perspective for smaller cube's depth effect */
+    font-family: Arial, sans-serif;
+    color: #eee;
+    /* Background Logo Settings */
+    background-image: url('logo.png'); /* Apni logo image ka path yahan dein */
+    background-repeat: no-repeat; /* Logo repeat na ho */
+    background-position: center; /* Logo screen ke beech mein aaye */
+    background-size: contain; /* Logo pura dikhe, aspect ratio maintain rahe. 'cover' bhi use kar sakte hain agar poora background cover karna ho. */
+}
+
+.cube-container {
+    width: 200px; /* Chota cube size */
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(-30deg) rotateY(45deg); /* Initial view */
+    margin-bottom: 30px;
+}
+
+.cube {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease-out; /* Smooth rotation */
+}
+
+.face {
+    position: absolute;
+    width: 200px; /* Cube container ke size se match kare */
+    height: 200px; /* Cube container ke size se match kare */
+    background-color: rgba(0, 0, 0, 0.4); /* Faces ke liye semi-transparent background */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3x3 grid for stickers */
+    grid-template-rows: repeat(3, 1fr);
+    border: 1px solid #333;
+    box-sizing: border-box;
+}
+
+.sticker {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #333; /* Stickers ke beech mein patli border */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Positioning each face in 3D space (values updated for 200px cube) */
+.front  { transform: translateZ(100px); } /* translateZ should be half of the cube's width/height */
+.back   { transform: rotateY(180deg) translateZ(100px); }
+.right  { transform: rotateY(90deg) translateZ(100px); }
+.left   { transform: rotateY(-90deg) translateZ(100px); }
+.top    { transform: rotateX(90deg) translateZ(100px); }
+.bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+/* Sticker Colors */
+.red    { background-color: #ff0000; }
+.orange { background-color: #ff8c00; }
+.blue   { background-color: #0000ff; }
+.green  { background-color: #008000; }
+.white  { background-color: #ffffff; }
+.yellow { background-color: #ffff00; }
+.grey   { background-color: #555; } /* Default/error color */
+
+/* Controls Styling */
+.controls {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.button-group {
+    margin-bottom: 10px;
+}
+
+.controls button {
+    padding: 8px 12px; /* Buttons ka size thora chota */
+    margin: 3px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.9em; /* Font size thora chota */
+    transition: background-color 0.3s;
+}
+
+.controls button:hover {
+    background-color: #0056b3;
+}
+
+.controls button:active {
+    background-color: #004085;
+}
